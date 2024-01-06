@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaRegBookmark } from "react-icons/fa";
 import { getApi, api } from '@/utils';
-import { FaPlus } from "react-icons/fa6";
+import { CiBookmarkPlus } from "react-icons/ci";
+import ForYou from '@/components/HomeBookPage/ForYou';
+
 
 const Home = async () => {
   const response = await getApi(api.url, api.key)
@@ -19,43 +20,8 @@ const Home = async () => {
           <div>
             <p className='text-2xl'>For You</p>
           </div>
-          {booksLists.map((bookItem: any) =>       
-            <div className='w-full bg-white p-4 rounded-md shadow-md flex gap-8' key={bookItem.rank}>
-                <div className='h-32 w-24 sm:h-44 sm:w-32 bg-black overflow-hidden'>
-                  <Image
-                    src={bookItem.book_image} 
-                    width={bookItem.book_image_width}
-                    height={bookItem.book_image_height}
-                    alt='...'
-                    style={{width: '100%', height: '100%'}}
-                  />
-                </div>
-      
-                <div>
-                  <div className='h-[70%]'>
-                    <p className='text-[1rem] md:text-[1.6rem] line-clamp-2'>{bookItem.title}</p>
-                    <p className='text-sm'>by {bookItem.author}</p>
-                  </div>
-                  
-                  <div className='flex items-center gap-2 h-[30%]'>
-                    <Link href={`/${bookItem.rank}`} className='h-6 w-6 flex justify-center items-center'>
-                      <button>
-                        <FaRegBookmark className='text-xl' />
-                      </button>
-                    </Link>
-                    <Link href={`/${bookItem.rank}`}>
-                      <button className='bg-stone-200 h-6 w-14 md:w-24 rounded-sm flex justify-center items-center'>View</button>
-                    </Link>
-                    <Link href={`/${bookItem.rank}`}>
-                      <button className='bg-stone-200 h-6 w-14 md:w-24 rounded-sm flex justify-center items-center'>
-                        <FaPlus />
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-
-              </div>
-
+          {booksLists.map((book: any) =>       
+            <ForYou bookItem={book} key={book.rank}/>
           )}
         </div>
       </div>

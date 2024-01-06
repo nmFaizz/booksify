@@ -27,7 +27,7 @@ const SingleBookPage = async (props: {params: Slug}) => {
             <div className="max-w-[1000px] m-auto">
                 <BookPreview books={book} />
                 
-                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 mt-[4rem] px-4">
+                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 mt-[4rem] px-4 py-8 rounded-sm">
                     {res.results.books.map((book :any) => 
                         <BooksItem {...book} key={book.rank}/> 
                     )}

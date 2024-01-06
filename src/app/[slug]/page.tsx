@@ -1,8 +1,6 @@
 import { api, getApi } from "@/utils"
-import Image from "next/image"
-import BookButtons from "@/components/SingleBookPage/BookButtons/BookButtons"
-import OtherBooks from "@/components/OtherBooks/OtherBooks"
 import BookPreview from "@/components/SingleBookPage/BookPreview/BookPreview"
+import BooksItem from "@/components/BooksItem/BooksItem";
 
 let res: any;
 
@@ -25,11 +23,15 @@ const SingleBookPage = async (props: {params: Slug}) => {
     const book = await findBookApi(slug)
 
     return (
-        <main className="w-full bg-red-100 py-12">
+        <main className="w-full py-24">
             <div className="max-w-[1000px] m-auto">
-                <BookPreview singleBook={book} />
+                <BookPreview books={book} />
                 
-                <OtherBooks booksItem={res.results.books}/>
+                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 mt-[4rem] px-4">
+                    {res.results.books.map((book :any) => 
+                        <BooksItem {...book} key={book.rank}/> 
+                    )}
+                </div>
             </div>
         </main>
     )

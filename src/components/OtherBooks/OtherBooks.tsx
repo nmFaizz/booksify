@@ -8,7 +8,7 @@ const OtherBooks = (props: {booksItem: any}) => {
                 <p className="text-3xl">Other books</p>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 rounded-sm py-4 mt-8 bg-red-400">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 rounded-md py-4 mt-8 bg-white shadow-md">
                 {props.booksItem.map((book: any) => 
                     <OtherBooksItem {...book} key={book.rank} />        
                 )}

@@ -29,7 +29,7 @@ export default function NavBar() {
 
     return (
         <React.StrictMode>
-            <header className="bg-stone-500 w-full  px-4 sm:px-12 flex justify-between items-center py-2 sticky top-0 text-white z-50">
+            <header className="w-full  px-4 sm:px-12 flex justify-between items-center py-2 sticky top-0 z-50 text-stone-700">
                 <div>
                     <p className="text-2xl">BOOKSIFY</p>
                 </div>
@@ -62,7 +62,7 @@ export default function NavBar() {
                 </nav>
             </header>
 
-            <nav className={`px-4 gap-12 lg:hidden flex fixed w-full flex-col bg-stone-600 py-12 text-white ${isMenu ? 'translate-y-[0%]' : 'translate-y-[-100%]'} transition-all`}>
+            <nav className={`px-4 gap-12 lg:hidden flex fixed w-full flex-col py-12 text-white ${isMenu ? 'translate-y-[0%]' : 'translate-y-[-150%]'} transition-all text-stone-700`}>
                 <div className="">
                     <SearchBar />
                 </div>

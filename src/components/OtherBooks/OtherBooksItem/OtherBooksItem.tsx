@@ -32,12 +32,12 @@ const OtherBooksItem = ({
                 
                 <div className="">
                     <Link href={`/${rank}`}>
-                        <button className="bg-red-100 w-full mt-2 rounded-sm">
+                        <button className="bg-stone-200 w-full mt-2 rounded-sm">
                             View
                         </button>
                     </Link>
                     <Link href="/">
-                        <button className="bg-red-100 w-full mt-2 rounded-sm">
+                        <button className="bg-stone-200 w-full mt-2 rounded-sm">
                             Add
                         </button>
                     </Link>

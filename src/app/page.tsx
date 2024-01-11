@@ -1,13 +1,22 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { getApi, api } from '@/utils';
-import { CiBookmarkPlus } from "react-icons/ci";
 import ForYou from '@/components/HomeBookPage/ForYou';
+// import { useEffect } from 'react';
 
 
 const Home = async () => {
   const response = await getApi(api.url, api.key)
   const booksLists = response.results.books
+
+  // const handleScroll = () => {
+  //   console.log('test')
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll)
+
+  //   return () => window.removeEventListener('scroll', handleScroll)
+    
+  // }, [])
 
   return (
     <main className='bg-stone-100 pt-12'>

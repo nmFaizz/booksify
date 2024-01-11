@@ -18,18 +18,26 @@ export default function NavBar() {
             name: 'My Books'
         },
         {
+            pathName: '/Books',
+            name: 'Books'
+        },
+        {
             pathName: '/Wishlist',
             name: 'Wishlist'
-        }
+        },
     ]
 
     const isMenuHandler = (): void => {
         setIsMenu(() => false)
     }
 
+    const navScrollHandler = (e: any) => {
+        console.log(e)
+    }
+
     return (
         <React.StrictMode>
-            <header className="w-full  px-4 sm:px-12 flex justify-between items-center py-2 sticky top-0 z-50 text-stone-700">
+            <header className="w-full  px-4 sm:px-12 flex justify-between items-center py-2 sticky top-0 z-50 text-stone-700" onClick={navScrollHandler}>
                 <div>
                     <p className="text-2xl">BOOKSIFY</p>
                 </div>

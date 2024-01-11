@@ -33,7 +33,7 @@ const ForYou = (props: {bookItem: Books}) => {
                 </div>
                 
                 <div className='flex items-center gap-2 h-[30%]'>
-                    <Link href={`/${bookItem.rank}`}>
+                    <Link href={`/Books/${bookItem.rank}`}>
                         <button className='bg-stone-200 h-6 w-14 md:w-24 rounded-sm flex justify-center items-center'>View</button>
                     </Link>
                     <Link href={`/${bookItem.rank}`}>

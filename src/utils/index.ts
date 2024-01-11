@@ -1,6 +1,6 @@
 import next from "next"
 
-export interface Books {
+export type Books  = {
     age_group: string,
     amazon_product_url: string,
     article_chapter_link: string,

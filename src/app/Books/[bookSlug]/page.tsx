@@ -1,4 +1,4 @@
-import { api, getApi } from "@/utils"
+import { api,getApi } from "@/utils";
 import BookPreview from "@/components/SingleBookPage/BookPreview/BookPreview"
 import BooksItem from "@/components/BooksItem/BooksItem";
 
@@ -14,20 +14,20 @@ const findBookApi = async (slug: string) => {
     return book
 }
 
-interface Slug {
-    slug: string
-}
-
-const SingleBookPage = async (props: {params: Slug}) => {
-    const { slug } = props.params
-    const book = await findBookApi(slug)
+const SingleBookPage = async (props: {params: any}) => {
+    const { bookSlug } = props.params
+    const book = await findBookApi(bookSlug)
 
     return (
         <main className="w-full py-24">
             <div className="max-w-[1000px] m-auto">
                 <BookPreview books={book} />
                 
-                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 mt-[4rem] px-4 py-8 rounded-sm">
+
+                <div className="mt-12">
+                    <p className="text-[2rem]">Other Books</p>
+                </div>
+                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 py-8 rounded-sm">
                     {res.results.books.map((book :any) => 
                         <BooksItem {...book} key={book.rank}/> 
                     )}

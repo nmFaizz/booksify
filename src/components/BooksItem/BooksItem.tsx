@@ -1,30 +1,30 @@
 import Image from "next/image"
+import Link from "next/link"
+import type { Books } from "@/utils"
+
 
 const BooksItem = ({ 
     title,
     author,
+    rank,
     book_image,
     book_image_width,
     book_image_height,
-}: {
-    title: string,
-    author: string,
-    rank: number
-    book_image: string,
-    book_image_width: number,
-    book_image_height: number
-}) => {
+}: Books) => {
     return (
-        <div className="bg-white">
-            <div>
-                <Image src={book_image} width={book_image_width} height={book_image_height} alt={title} /> 
-            </div>
+        <Link href={`/Books/${rank.toString()}`}>
+            <div className="bg-white">
+                <div>
+                    <Image src={book_image} width={book_image_width} height={book_image_height} alt={title} /> 
+                </div>
 
-            <div>
-                <p>{title}</p>
-                <p>{author}</p>
+                <div>
+                    <p>{title}</p>
+                    <p className="text-[12px]">{author}</p>
+                </div>
             </div>
-        </div>
+        
+        </Link>
     )
 }
 

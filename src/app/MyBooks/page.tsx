@@ -15,17 +15,13 @@ const MyBooks = async () => {
         <main>
             <div className="max-w-[1000px] m-auto py-12 px-4">
                 <div>
-                    <p className="text-[2rem]">My Collections</p>
+                    <p className="text-[1.5rem] md:text-[2rem]">My Collections</p>
                 </div>
 
-                <div className="bg-white mt-12">
-
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                        {books.map((book: any) => 
-                            <BooksItem {...book} key={book.rank} />
-                        )}
-
-                    </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white mt-12 p-4 rounded-sm">
+                    {books.map((book: any) => 
+                        <BooksItem {...book} key={book.rank} />
+                    )}
 
                 </div>
             </div>

@@ -21,14 +21,14 @@ const ForYou = (props: {bookItem: Books}) => {
 
             <div>
                 <div className='h-[70%]'>
-                    <p className='text-[1rem] md:text-[1.6rem] line-clamp-2'>{bookItem.title}</p>
+                    <p className='text-[1rem] md:text-[1.6rem] line-clamp-2 max-w-[140px] md:max-w-none'>{bookItem.title}</p>
                     <p className='text-sm'>by {bookItem.author}</p>
 
                     <div className="flex items-center mt-1 md:mt-4 gap-2">
-                        <button>
+                        <button className="flex gap-2">
                             <BsBookmarkPlus />
+                            <p className="text-[12px]">Add to wishlist</p>
                         </button>
-                        <p className="text-[12px]">Add to wishlist</p>
                     </div>
                 </div>
                 

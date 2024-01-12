@@ -20,14 +20,14 @@ const SingleBookPage = async (props: {params: any}) => {
 
     return (
         <main className="w-full py-24">
-            <div className="max-w-[1000px] m-auto">
+            <div className="max-w-[1000px] m-auto px-4">
                 <BookPreview books={book} />
-                
-
+            
                 <div className="mt-12">
-                    <p className="text-[2rem]">Other Books</p>
+                    <p className="text-[1.5rem] md:text-[2rem]">Other Books</p>
                 </div>
-                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 py-8 rounded-sm">
+
+                <div className="bg-white grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-sm">
                     {res.results.books.map((book :any) => 
                         <BooksItem {...book} key={book.rank}/> 
                     )}

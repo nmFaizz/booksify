@@ -1,27 +1,15 @@
 import { getApi, api } from '@/utils';
 import ForYou from '@/components/HomeBookPage/ForYou';
-// import { useEffect } from 'react';
 
 
 const Home = async () => {
   const response = await getApi(api.url, api.key)
   const booksLists = response.results.books
 
-  // const handleScroll = () => {
-  //   console.log('test')
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll)
-
-  //   return () => window.removeEventListener('scroll', handleScroll)
-    
-  // }, [])
-
   return (
     <main className='bg-stone-100 pt-12'>
       <div className='max-w-[800px] flex-1 px-4 m-auto'>
-        <div className='w-full bg-blue-300 h-[220px] rounded-md flex items-center justify-center font-bold'>
+        <div className='w-full bg-stone-400 h-[220px] rounded-md flex items-center justify-center font-bold'>
           <p className='text-[1.5rem] sm:text-[2rem] text-white'>Welcome To Booksify.</p>
         </div>
 

@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 const MyBooks = async () => {
     const res = await getApi(api.url, api.key)
-    const books = res.results.books
     
     return (
         <main>
@@ -19,9 +18,7 @@ const MyBooks = async () => {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white mt-12 p-4 rounded-sm">
-                    {books.map((book: any) => 
-                        <BooksItem {...book} key={book.rank} />
-                    )}
+                    <p>You have no collections.</p>
 
                 </div>
             </div>

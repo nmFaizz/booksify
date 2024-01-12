@@ -76,7 +76,7 @@ export default function NavBar() {
                             <Image 
                                 src='/guest-pfp.jpg' 
                                 alt="guest-pfp" 
-                                width={0} height={0} 
+                                width={50} height={50} 
                                 style={{objectFit: 'cover', width: '100%', height: '100%'}} 
                             />
                         </div>

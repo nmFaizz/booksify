@@ -4,6 +4,7 @@ import NavLinks from "./NavLinks/NavLinks";
 import SearchBar from "../SearchBar/SearchBar";
 import { TbMenu } from "react-icons/tb";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function NavBar() {
     const [isMenu, setIsMenu] = useState(false)

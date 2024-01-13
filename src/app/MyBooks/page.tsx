@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import { getApi, api } from "@/utils"
-import Image from "next/image"
 import BooksItem from "@/components/BooksItem/BooksItem";
+import MyBooksCollection from "@/components/MyBooksCollection/MyBooksCollection";
 
 export const metadata: Metadata = {
     title: 'Booksify - MyBooks'
@@ -17,10 +17,7 @@ const MyBooks = async () => {
                     <p className="text-[1.5rem] md:text-[2rem]">My Collections</p>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white mt-12 p-4 rounded-sm">
-                    <p>You have no collections.</p>
-
-                </div>
+                <MyBooksCollection />
             </div>
         </main>
     )

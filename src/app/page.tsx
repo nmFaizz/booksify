@@ -13,9 +13,9 @@ const Home = async () => {
           <p className='text-[1.5rem] sm:text-[2rem] text-white'>Welcome To Booksify.</p>
         </div>
 
-        <div className='text-black mt-10 flex flex-col gap-4'>
-          <div>
-            <p className='text-2xl'>For You</p>
+        <div className='text-black mt-4 flex flex-col gap-4'>
+          <div className='bg-stone-300 rounded-md'>
+            <p className='text-[1.7rem] font-[500] w-auto px-4 text-stone-500'>For You</p>
           </div>
           {booksLists.map((book: any) =>       
             <ForYou bookItem={book} key={book.rank}/>

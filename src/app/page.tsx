@@ -15,7 +15,7 @@ const Home = async () => {
 
         <div className='text-black mt-4 flex flex-col gap-4'>
           <div className='bg-stone-300 rounded-md'>
-            <p className='text-[1.7rem] font-[500] w-auto px-4 text-stone-500'>For You</p>
+            <p className='text-[1.7rem] font-[500] w-auto px-4 py-2 text-stone-500'>For You</p>
           </div>
           {booksLists.map((book: any) =>       
             <ForYou bookItem={book} key={book.rank}/>

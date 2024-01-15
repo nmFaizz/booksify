@@ -54,7 +54,7 @@ export default function NavBar() {
                 <div>
                     <h1 className="text-2xl">BOOKSIFY</h1>
                 </div>
-                
+
                 <nav className="flex gap-4 sm:gap-12 items-center">
                     <div className="gap-12 lg:flex hidden">
                         {navOption.map(option => 
@@ -81,20 +81,21 @@ export default function NavBar() {
                         />
                     </div>
                 </nav>
+
+                {isMenu &&
+                    <nav className={`px-4 gap-12 lg:hidden ${isNav ? 'bg-white' : 'bg-stone-100'} flex absolute top-0 left-0 z-[-1] w-full flex-col py-24 transition-all text-stone-700`}>
+                        <div className="">
+                            <SearchBar />
+                        </div>
+
+                        {navOption.map(option => 
+                            <NavLinks key={option.name} path={option.pathName}  linkName={option.name} isMenuHandler={isMenuHandler}/>
+                        )}
+                    </nav>
+                }
+                
+                
             </div>
-
-            {isMenu && 
-                <nav className={`px-4 gap-12 lg:hidden ${isNav ? 'bg-white' : 'bg-stone-100'} flex fixed w-full flex-col py-12 transition-all text-stone-700`}>
-                    <div className="">
-                        <SearchBar />
-                    </div>
-
-                    {navOption.map(option => 
-                        <NavLinks key={option.name} path={option.pathName}  linkName={option.name} isMenuHandler={isMenuHandler}/>
-                    )}
-
-                </nav>
-            }
         </header>
     ) 
 }
